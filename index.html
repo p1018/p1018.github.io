@@ -1,17 +1,23 @@
-<!DOCTYPE html>
-<html>
+<html lang="ja">
 <head>
+<meta http-equiv="Content-Type" content="text/html; charset=Shift_JIS">
+<meta http-equiv="Content-Script-Type" content="text/javascript">
 <title>サンプル</title>
-<script>
-window.onload = function() {
-  window.setInterval(function() {
-    var dd = new Date();
-    document.getElementById("T1").innerHTML = dd.toLocaleString();
-  }, 1000);
+<script type="text/javascript">
+<!--
+var str = "ぐるぐるどーん　";
+
+function str_scroll() {
+	window.status = str;
+	str = str.substring(1) + str.charAt(0);		// 変化させる文字列の取得
+	setTimeout("str_scroll();", 200);
 }
+window.onload = str_scroll;
+// -->
 </script>
 </head>
 <body>
-<div id="T1"></div>
+  :
+  :
 </body>
 </html>
